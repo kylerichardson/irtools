@@ -1,0 +1,2 @@
+crontab entry:
+30 8,12,4 * * * /path/to/script <domain>
