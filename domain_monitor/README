@@ -1,2 +1,5 @@
-crontab entry:
-30 8,12,4 * * * /path/to/script <domain>
+Copy script to local scripts directory and update EMAIL.
+
+crontab entry (Run daily at 08:30,12:30,16:30):
+30 8,12,16 * * * /path/to/script <domain>
+

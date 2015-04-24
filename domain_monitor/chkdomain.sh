@@ -4,8 +4,8 @@ DOMAIN=$1
 LASTRUN="$DOMAIN.html"
 THISRUN="$DOMAIN.html.tmp"
 DIFFRESULT="$DOMAIN.diff"
-EMAIL="kyle.richardson@fnfg.com"
-CURLCMD="curl -s -L -U dfir:Fnfg!6950"
+EMAIL="me@example.com"
+CURLCMD="curl -s -L"
 
 cd $HOME/dommon
 
