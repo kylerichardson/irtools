@@ -5,7 +5,7 @@ LASTRUN="$DOMAIN.html"
 THISRUN="$DOMAIN.html.tmp"
 DIFFRESULT="$DOMAIN.diff"
 EMAIL="me@example.com"
-CURLCMD="curl -s -L"
+CURLCMD="curl -s -L -H \"Cache-Control: no-cache\""
 
 cd $HOME/dommon
 
