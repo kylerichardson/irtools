@@ -5,17 +5,16 @@ LASTRUN="$DOMAIN.html"
 THISRUN="$DOMAIN.html.tmp"
 DIFFRESULT="$DOMAIN.diff"
 EMAIL="me@example.com"
-CURLCMD="curl -s -L -H \"Cache-Control: no-cache\""
 
 cd $HOME/dommon
 
-`$CURLCMD -o $THISRUN $DOMAIN`
+curl -s -L -H "Cache-Control: no-cache" $DOMAIN > $THISRUN
 
 diff $LASTRUN $THISRUN > $DIFFRESULT
 
 if [ -s $DIFFRESULT ]
 then
-	`$CURLCMD -I -o head.txt $DOMAIN`
+	curl -s -L -H "Cache-Control: no-cache" -I $DOMAIN > head.txt
 	cat head.txt $THISRUN > report.txt
 	echo "$DOMAIN has changed!" | mailx -a report.txt -s "Monitored Domain Activity" $EMAIL
 	rm head.txt report.txt
