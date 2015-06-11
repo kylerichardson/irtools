@@ -19,7 +19,7 @@ puts eml_files.inspect if $DEBUG
 
 eml_files.each do |file_name|
     puts "Input File: #{input_dir}#{file_name}" if $DEBUG
-    lines = open("#{input_dir}#{file_name}").readlines
+    lines = File.readlines("#{input_dir}#{file_name}")
     while true
         puts lines[0] if $DEBUG
         if lines[0] !~ /^>From/
