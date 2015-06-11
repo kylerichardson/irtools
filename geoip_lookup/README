@@ -1,2 +1,12 @@
+python dependencies:
+* geoip2
+
 Download the latest available GeoLite2 database in MaxMind DB format
-from: http://dev.maxmind.com/geoip/geoip2/geolite2/.
+from: http://dev.maxmind.com/geoip/geoip2/geolite2/. Updates are
+released the first Tuesday of each month.
+
+crontab entry to download monthly updates:
+0 12 1-7 * * [ "$(date '+\%a')" = "Wed" ] && <script> 
+
+curl -O http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz
+
